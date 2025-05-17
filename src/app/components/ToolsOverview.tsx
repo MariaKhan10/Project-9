@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const tools = [
   { name: "Task Manager", emoji: "✅", description: "Organize and track your tasks efficiently." },
@@ -24,9 +25,17 @@ export default function ToolsOverview() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {tools.map((tool, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:scale-[1.05] transition-transform border-2 border-transparent hover:border-pink-400"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.1,
+                ease: "easeInOut",
+              }}
+              viewport={{ once: false, amount: 0.2 }}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-transform border-2 border-transparent hover:border-pink-400"
               tabIndex={0}
               aria-label={`${tool.name} tool: ${tool.description}`}
             >
@@ -35,7 +44,7 @@ export default function ToolsOverview() {
               </div>
               <h3 className="text-2xl font-semibold text-indigo-800 mb-2">{tool.name}</h3>
               <p className="text-indigo-600 leading-relaxed">{tool.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

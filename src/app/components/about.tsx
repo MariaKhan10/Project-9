@@ -5,10 +5,10 @@ import { FiExternalLink } from "react-icons/fi"; // React icon for external link
 
 export default function About() {
   // Yahan apna Streamlit SmartKit link daalein
-  const smartKitLink = "https://your-streamlit-smartkit-link.app";
+  const smartKitLink = "https://smartkit.streamlit.app/";
 
   return (
-    <section className="bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 text-white py-28 px-6 text-center rounded-b-3xl shadow-lg">
+    <section className="bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 text-white py-48 px-6 text-center rounded-b-3xl shadow-lg">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-5xl font-extrabold mb-4">
           Smart<span className="text-yellow-300">Kit</span> 🧰
